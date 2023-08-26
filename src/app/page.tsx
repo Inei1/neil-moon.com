@@ -26,9 +26,9 @@ export default function Home() {
         <Grid item>
           <MuiLink target="_blank" href="https://drive.google.com/file/d/1z-jSeRKHfAwor9qWYOEqrzLNZqcCYI3l/view?usp=sharing">
             <Grid container direction="column">
-              <Grid item>
+              {/* <Grid item>
                 <Image src="/resume-icon.svg" alt="resume icon" width={34} height={34} />
-              </Grid>
+              </Grid> */}
               <Grid item>
                 Resume
               </Grid>
