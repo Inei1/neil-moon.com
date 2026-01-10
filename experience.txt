@@ -1,0 +1,732 @@
+Google context:
+SOURCE: Professional Experience — Google
+Company Overview
+
+Google (Alphabet) — Large-scale, data-driven technology company operating global infrastructure, consumer products, and internal platforms supporting billions of dollars in operational spend.
+
+Role: Engineering Resident (Software Engineer equivalent, L3 scope)
+
+Tenure: 2020–2021
+Program: Google Engineering Residency (two 20-week rotations)
+Role Context: Engineering Residents perform the same work as entry-level Software Engineers (L3), rotating across teams to build production systems and demonstrate readiness for full-time SWE roles.
+
+General Focus Areas:
+
+Backend systems
+
+Data pipelines
+
+Internal tooling
+
+Reliability and correctness of production systems
+
+Working within large, legacy Google codebases
+
+Core Technologies:
+
+SQL (BigQuery, SQLP)
+
+Go (Rotation 1)
+
+Java (Rotation 2)
+
+Google internal frameworks (Spanner, Blaze/Bazel)
+
+Rotation 1: Marketing Email Automation Workflow
+
+Problem Context:
+At the time, sending certain marketing emails required manual engineering involvement for each send. This created delays, increased coordination overhead, and did not scale with growing marketing needs.
+
+My Contribution:
+I built an entirely new backend workflow to automate the data preparation and triggering required for marketing email campaigns.
+
+Key responsibilities included:
+
+Identifying, validating, and debugging upstream internal data sources needed for email generation
+
+Fixing inconsistencies or correctness issues in those data sources when required
+
+Designing and implementing SQL-based data processing pipelines to reliably produce inputs for marketing workflows
+
+Integrating the pipeline into Google’s internal infrastructure so that it could run repeatedly without engineering intervention
+
+Business Impact (Inferred / Estimated):
+
+Reduced marketing turnaround time by an estimated ~70%
+
+Eliminated repeated manual engineering work previously required for each campaign
+
+Saved hundreds of engineering hours per month by removing humans from a previously manual process
+
+Enabled marketing teams to operate more independently
+
+The system is believed to still be in production today, indicating long-term value and maintainability
+
+Skills Demonstrated:
+
+Translating non-technical business workflows into automated systems
+
+Debugging and correcting upstream data dependencies
+
+Building production-grade internal tooling with SQL-heavy pipelines
+
+Designing for repeatability and operational simplicity
+
+Rotation 2: RCS (Android) Integration Test Sample Report
+
+Team Context:
+Worked within Google’s RCS (Rich Communication Services) Android organization, focused on ensuring correctness and reliability of a new system replacing a deprecated legacy one.
+
+Problem Context:
+A legacy Java system previously acted as the “source of truth” for a specific report, but:
+
+The system was deprecated
+
+It was no longer actively used
+
+The codebase was poorly written and difficult to reason about
+
+Despite this, the team needed high confidence that the new system’s output was correct. To achieve this, they required an automated integration test (“push on green”) that could validate outputs against a known reference.
+
+My Contribution:
+I:
+
+Dug into the deprecated legacy Java codebase to identify the true logic responsible for generating the report
+
+Isolated and understood the minimal subset of logic that actually defined the output
+
+Reimplemented that logic cleanly in a brand-new Java service
+
+Produced a deterministic sample report used as part of an automated integration test pipeline
+
+Outcome:
+
+Enabled reliable automated verification of the new system
+
+Reduced uncertainty around correctness during rollout
+
+Removed dependence on an unreadable, deprecated legacy system
+
+Improved team confidence in production deployments
+
+Skills Demonstrated:
+
+Navigating large, legacy codebases to find “source of truth”
+
+Distilling complex, poorly structured logic into clean, minimal implementations
+
+Writing production Java services intended specifically for testing and validation
+
+Improving system reliability through automated integration testing
+
+Conversion to Full-Time Software Engineer (L3)
+
+After successfully completing the Engineering Residency program, I converted to a full-time Software Engineer role at Google.
+
+Role: Software Engineer (Full-Time) — Datacenter Hardware Pricing
+
+Team Context:
+Internal infrastructure team responsible for determining and forecasting the prices of Google’s datacenter hardware — covering hardware purchases worth billions of dollars.
+
+System Overview:
+
+Large-scale SQL-driven data pipeline
+
+Runs daily, with special quarterly runs serving as the financial “source of truth”
+
+Processes millions of rows
+
+End-to-end runtime of 5+ hours
+
+Directly feeds finance forecasting and planning models
+
+Bugs or inaccuracies could materially impact financial decisions
+
+My Responsibilities:
+
+Maintain and extend a mission-critical pricing pipeline
+
+Participate in on-call rotations supporting 4–5 related teams
+
+Diagnose and fix correctness, performance, and reliability issues
+
+Work closely with the finance team as primary internal customers
+
+Key Contributions:
+
+Correctness & Pricing Logic Improvements
+
+Identified cases where hardware configurations without prior purchase history produced invalid or missing prices
+
+Reworked pricing logic to generate valid, defensible prices for these scenarios
+
+Improved pipeline robustness and coverage across hardware SKUs
+
+High-Severity Bug Resolution
+
+Investigated a rounding error that caused unexpected price changes during a quarterly run
+
+The issue triggered a multi-team war room due to downstream financial impact
+
+Successfully isolated the root cause and implemented a fix, stabilizing future runs
+
+Performance Optimization
+
+Used built-in profiling tools to analyze pipeline performance
+
+Identified an expensive computation step taking ~1 hour that no longer affected outputs due to earlier logic changes
+
+Removed unused calculations, reducing total pipeline runtime by approximately 1 hour
+
+Improved overall efficiency and reduced operational risk for long-running jobs
+
+Finance Collaboration & Ad-Hoc Analysis
+
+Met weekly with finance stakeholders who depended on the pipeline outputs
+
+Provided support when finance teams were blocked
+
+Produced custom reports when asked to analyze data over alternative time horizons
+
+Business Impact:
+
+Improved accuracy and trust in financial forecasting inputs
+
+Reduced risk of costly planning errors
+
+Increased pipeline reliability for a system underpinning billions of dollars in spend
+
+Helped finance teams move faster with fewer interruptions
+
+Skills Demonstrated:
+
+Data engineering at scale
+
+Production debugging under pressure
+
+Performance profiling and optimization
+
+Cross-functional collaboration with finance stakeholders
+
+Ownership of critical internal infrastructure without formal leadership authority
+
+SOURCE: Professional Experience — ParentHero
+Company Overview
+
+ParentHero — Pre-seed consumer health startup focused on providing parenting support from pregnancy through the first years of a child’s life. Product emphasized evidence-informed content, tracking tools, and accessibility across web and mobile.
+
+Role: Founding Engineer (Sole Engineer)
+
+Tenure: Nov 2023 – Dec 2025
+Role Context: Sole engineer responsible for building, maintaining, and operating the entire product end-to-end. Worked directly with the founder and occasionally with a small content team. No direct interaction with end users; feedback was mediated through the founder, medical advisors, and beta testing.
+
+Ownership Scope:
+
+Full-stack web and mobile application
+
+Backend services and APIs
+
+Data modeling and persistence
+
+Cloud infrastructure and deployments
+
+Security and privacy protections
+
+Performance, reliability, and operational debugging
+
+High-Level Technical Stack
+
+Frontend:
+
+Next.js
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+CapacitorJS (web → mobile app)
+
+Backend:
+
+TypeScript
+
+PayloadCMS 3 (Next.js-based)
+
+PostgreSQL
+
+Prior system: Strapi (fully migrated away)
+
+Infrastructure:
+
+AWS ECS / EC2
+
+VPC
+
+S3
+
+Lambda
+
+Autoscaling
+
+Pre-signed URLs for secure asset access
+
+System Architecture & Constraints
+
+I designed the system architecture myself and was responsible for all implementation decisions outside of the initial Next.js and Strapi choices, which predated my involvement.
+
+Key constraints:
+
+Consumer health domain with strict medical disclaimers
+
+HIPAA-adjacent and child data protection requirements
+
+Sensitive personal and child-related data
+
+Very tight runway and pressure to ship quickly
+
+To address data sensitivity, I implemented a tokenization / detokenization system so that:
+
+Sensitive user data was never stored in plaintext
+
+A database compromise would not yield usable personal information
+
+Tokens could be safely joined with operational data only at runtime
+
+CMS Migration: Strapi → PayloadCMS
+
+The original backend used Strapi, which significantly slowed development due to long reload cycles (often 5–10 minutes per change).
+
+I:
+
+Evaluated alternatives
+
+Migrated the entire backend to PayloadCMS
+
+Rebuilt schemas, rich text, access control, and APIs
+
+Integrated PayloadCMS directly with the Next.js app
+
+Reflection:
+While the migration improved long-term developer velocity, it consumed more time than ideal for a pre-seed startup. This experience sharpened my judgment around tradeoffs between technical quality and speed-to-market under runway constraints.
+
+Core Product Areas
+Article System (End-to-End Feature)
+
+I rebuilt and extended the article system into a production-grade, multi-modal content experience.
+
+Capabilities:
+
+Rich text articles with custom blocks (via PayloadCMS)
+
+Inline images and structured content
+
+Embedded video
+
+Article-specific integrations (e.g., vaccine tracker references)
+
+Text-to-speech audio playback
+
+Text-to-Speech:
+
+Implemented using AWS Polly
+
+Audio generated asynchronously on article updates
+
+Stored in S3 and reused on demand
+
+Designed to avoid runtime latency and control costs
+
+Video Delivery:
+
+Staff-uploaded MP4 videos (typically 6–10 minutes)
+
+Built a custom workflow to transcode MP4 into multi-bitrate HLS streams
+
+Used Shaka Player for playback
+
+Implemented authenticated access using S3 pre-signed URLs
+
+This required building:
+
+Media processing pipelines
+
+Secure delivery mechanisms
+
+A custom video player integration
+
+Tracking Systems (Major Product Differentiator)
+
+I built a suite of tracking tools covering pregnancy, postpartum, and early childhood. While many trackers were CRUD-oriented, several required non-trivial domain logic.
+
+All trackers included:
+
+Structured data entry
+
+Historical views
+
+Analytics and summaries where applicable
+
+Vaccine Tracker (High Complexity)
+
+Dynamically generated recommendations based on:
+
+Child age
+
+Prior vaccination history
+
+Supported missed doses via catch-up logic
+
+Implemented logic based on CDC vaccine schedules
+
+Adjusted future recommendations automatically as history changed
+
+Pregnancy / Postpartum Tracker
+
+Time-based system driven by pregnancy or postpartum week
+
+Delivered contextual information relevant to the current stage
+
+Allowed symptom tracking with historical views
+
+Developmental Milestones
+
+Age-based milestone expectations
+
+Allowed parents to track whether milestones were met
+
+Notified users when milestones were overdue
+
+Provided progress visibility over time
+
+Feeding Tracker
+
+Supported both nursing and bottle feeding
+
+Time-based tracking for nursing
+
+Volume-based tracking for bottle feeding
+
+Side tracking for nursing sessions
+
+Aggregated summaries for daily usage
+
+Infrastructure & Operations
+
+I set up and operated all AWS infrastructure myself.
+
+Key aspects:
+
+ECS-based deployments
+
+Autoscaling configuration
+
+Manual infra management (no IaC)
+
+Database performance and connection pooling
+
+Operational Incident Example:
+
+Diagnosed PostgreSQL transaction pool exhaustion caused by unclosed transactions
+
+Identified the root cause in backend logic
+
+Implemented fixes to prevent recurrence
+
+This required production debugging across application code, database behavior, and AWS infrastructure.
+
+Business Context & Outcome
+
+ParentHero was a pre-seed company with a very limited runway. The product reached beta but did not achieve sufficient traction or funding to continue.
+
+I left when it became clear the company would not progress further.
+
+Framing Note:
+While the product did not succeed commercially, the role required building a complete, real-world system under tight constraints, with full ownership across frontend, backend, infrastructure, security, and delivery.
+
+Skills & Signals Demonstrated
+
+End-to-end product engineering
+
+Full-stack TypeScript development
+
+Backend system design
+
+Data privacy and security-conscious design
+
+Media processing pipelines
+
+Cloud infrastructure ownership
+
+Pragmatic decision-making under startup constraints
+
+SOURCE (Extension): ParentHero — Additional Systems & Features
+Analytics & Data Visualization
+
+For every major tracker, I built a dedicated analytics page that allowed users to understand trends over time rather than just raw entries.
+
+Capabilities:
+
+Tabular views of historical tracker data
+
+Custom, tracker-specific graphs built with Recharts
+
+Time-based aggregation (daily, weekly, etc., where applicable)
+
+Domain-specific visualizations depending on the tracker (e.g., volume over time, frequency, milestone progress)
+
+This required:
+
+Designing analytics schemas per tracker
+
+Aggregating and transforming raw event data into visualization-friendly formats
+
+Balancing clarity and performance for mobile and desktop views
+
+Article Engagement Systems
+
+Beyond article rendering, I built multiple systems to support long-term engagement.
+
+Bookmarking & History:
+
+Users could bookmark articles for later reference
+
+Maintained a persistent list of bookmarked articles
+
+Tracked article view history to support:
+
+User recall
+
+Personalization
+
+Recommendation fallback logic
+
+These systems tied directly into the recommendation engine and user profile.
+
+Employer (B2B) System
+
+In addition to direct-to-consumer flows, I built a B2B employer licensing system intended for selling ParentHero as an employee benefit.
+
+Employer Dashboard:
+
+View all employees associated with an employer account
+
+Manage employee access
+
+Monitor license usage
+
+Licensing Management:
+
+Assign and revoke licenses
+
+Control access without exposing consumer subscription logic
+
+Support multiple employees under a single employer entity
+
+This required modeling:
+
+Employer–employee relationships
+
+License states
+
+Permission boundaries distinct from consumer subscriptions
+
+Help & Support Systems
+
+Help Section:
+
+Implemented similarly to the article system
+
+Separate content types and routing
+
+Allowed for structured, searchable help content
+
+Support Requests:
+
+Built a support button that automatically sent a structured support request email
+
+Included relevant user context to reduce back-and-forth
+
+Integrated directly with internal support workflows
+
+User Account & Onboarding Flows
+
+I implemented the full authentication and onboarding lifecycle in coordination with PayloadCMS.
+
+Authentication:
+
+User registration
+
+Mandatory email confirmation
+
+Password reset / forgot password flows
+
+Secure session handling
+
+Onboarding:
+
+Collected child information at account creation
+
+Allowed users to select:
+
+Parenting topics of interest
+
+Account preferences and settings
+
+Used onboarding data to seed personalization systems (recommendations, content feed)
+
+Article Recommendation System (Major Highlight)
+
+One of the most complex systems I built was a context-aware article recommendation engine designed to surface the most relevant content at the right time.
+
+Primary Recommendation Layer (Contextual Tagging):
+
+Pulled live data from every tracker (pregnancy stage, vaccine status, feeding behavior, milestones, etc.)
+
+Translated tracker signals into weighted tags for the user’s feed
+
+Articles were manually tagged by staff with corresponding tags
+
+Recommendations were ranked based on:
+
+Tag relevance
+
+Tag weight
+
+User context (e.g., urgency, recency)
+
+Example:
+
+If a user was due for a vaccine, vaccine-related tags were weighted heavily
+
+Articles explaining that vaccine were promoted prominently
+
+Fallback Strategies:
+When contextual signals were insufficient:
+
+Precomputed collaborative filtering
+
+Used historical user–article interactions
+
+Topic-based recommendations
+
+Based on user-selected interests
+
+Article history
+
+Viewed and bookmarked content
+
+This system blended:
+
+Rule-based logic
+
+Data-driven personalization
+
+Editorial control
+
+It was designed to be explainable, tunable by staff, and resilient to sparse user data.
+
+LLM-Based Parenting Chat Interface
+
+I built an AI-powered chat experience inspired by tools like Perplexity AI, focused on trust, traceability, and safety.
+
+User Experience:
+
+Users ask free-form parenting questions
+
+AI responds in natural language
+
+Inline citations appear directly in the response
+
+A source panel displays:
+
+Source URL
+
+Favicon
+
+Short meta description
+
+Technical Approach:
+
+Used OpenAI APIs
+
+Implemented Retrieval-Augmented Generation (RAG)
+
+Retrieved content from:
+
+ParentHero’s vetted premium articles
+
+Curated external parenting and medical sources
+
+Safety & Reliability Measures:
+
+Validated source URLs before inclusion
+
+Automatically excluded hallucinated or broken sources
+
+Ensured citations matched the referenced text
+
+Maintained strict separation between AI-generated content and medical decision-making
+
+This system emphasized:
+
+Transparency
+
+Source credibility
+
+Reduced hallucination risk
+
+Payments & Subscription System (Stripe)
+
+I designed and implemented the entire subscription system using Stripe.
+
+Payment Flow:
+
+Used Stripe Checkout Sessions with embedded payment UI
+
+Allowed for custom-branded checkout experiences
+
+Handled successful and failed payments cleanly
+
+Subscription Management:
+
+Stripe webhooks updated user subscription state
+
+Stored a subscription end date on the user record
+
+Access to premium features was determined entirely by subscription validity
+
+Permission System:
+
+Centralized permission checks based on subscription end date
+
+Enforced premium access across:
+
+Articles
+
+AI chat
+
+Advanced trackers
+
+Analytics
+
+This created a clean separation between:
+
+Payment processing
+
+Authorization logic
+
+Feature access
+
+Additional Signals for Recruiters & EMs
+
+Built a full consumer product solo, across frontend, backend, infra, data, and AI
+
+Shipped under extreme runway pressure
+
+Balanced correctness, privacy, and velocity
+
+Designed systems that were explainable and auditable, not just “clever”
+
+Developed strong judgment around tradeoffs after seeing real-world consequences
