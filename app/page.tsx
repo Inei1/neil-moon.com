@@ -1,43 +1,17 @@
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { ProjectCard } from '@/components/project-card';
 import Footer from '@/components/footer';
+import Image from 'next/image';
+import Header from '@/components/header';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Navigation */}
-      <header className="sticky px-8 top-0 z-40 w-full bg-neutral-800 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-6 md:gap-10">
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="inline-block font-bold">Neil Moon</span>
-            </Link>
-            {/* <nav className="hidden md:flex gap-6">
-              <Link href="#about" className="text-sm font-medium hover:text-foreground/80 transition-colors">
-                About
-              </Link>
-              <Link href="#projects" className="text-sm font-medium hover:text-foreground/80 transition-colors">
-                Projects
-              </Link>
-              <Link href="#contact" className="text-sm font-medium hover:text-foreground/80 transition-colors">
-                Contact
-              </Link>
-            </nav> */}
-          </div>
-          {/* <div className="flex items-center gap-2">
-            <ThemeToggle />
-            <Button asChild variant="outline" size="sm" className="ml-2">
-              <Link href="#contact">Get in touch</Link>
-            </Button>
-          </div> */}
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-1">
-        {/* Hero Section */}
         <section className="w-full">
           <div className="container mx-auto px-4 py-24 sm:py-32">
             <div className="mx-auto text-center">
@@ -63,12 +37,10 @@ export default function Home() {
                   </Link>
                 </Button> */}
               </div>
-              <span className="text-muted-foreground w-full text-center">(This website is under construction)</span>
             </div>
           </div>
         </section>
 
-        {/* About Section */}
         <section id="about" className="w-full bg-muted/10 py-24">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
@@ -82,12 +54,17 @@ export default function Home() {
                 </div>
                 <div className="grid gap-8 md:grid-cols-12 items-start">
                   <div className="md:col-span-5">
-                    {/* <div className="relative h-64 w-full rounded-xl overflow-hidden border-2 border-accent/20">
+                    <div className="relative h-96 w-full rounded-xl overflow-hidden border-2 border-accent/20">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Icons.user className="h-32 w-32 text-accent/50" />
-                      </div>
-                    </div> */}
+                      <Image src="/face26.jpg" alt="Me" className="h-full w-full object-cover" width={324} height={324} />
+                    </div>
+                    <div className="mt-4 flex justify-center">
+                      <Link href="/about">
+                        <Button variant="outline">
+                          Learn More <Icons.arrowRight className="h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
 
                   <div className="md:col-span-7 space-y-6">
@@ -130,12 +107,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
         <section id="projects" className="w-full py-24">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl text-center">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">My Projects</h2>
               <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <ProjectCard
+                  title="This website"
+                  description="My personal website built to showcase my work and projects."
+                  tags={['Next.js', 'TypeScript', 'Tailwind CSS', 'Cloudflare']}
+                  githubUrl="https://github.com/Inei1/neil-moon.com"
+                />
                 <ProjectCard
                   title="TuringTestChat"
                   description="A (defunct) LLM chat game where two users or an LLM and a user chat with each other, determining whether the other chatter is an LLM."
@@ -143,12 +125,12 @@ export default function Home() {
                   githubUrl="https://github.com/Inei1/TuringTestChat-Frontend"
                 />
               </div>
-              <Button asChild variant="outline" size="lg" className="gap-2">
+              {/* <Button asChild variant="outline" size="lg" className="gap-2">
                 <Link href="#projects">
                   See All
                   <Icons.arrowRight className="h-4 w-4" />
                 </Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </section>
